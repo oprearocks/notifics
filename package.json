@@ -1,0 +1,17 @@
+{
+  "name": "notifics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Adrian Oprea",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "hapi": "^8.0.0",
+    "node-notifier": "^4.0.3",
+    "path": "^0.4.9"
+  }
+}

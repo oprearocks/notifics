@@ -1,0 +1,31 @@
+{
+  "name": "notifics",
+  "version": "1.0.0",
+  "authors": [
+    "Adrian Oprea <opreaadriangeorge@gmail.com>"
+  ],
+  "description": "Multi-purpose notifications application",
+  "main": "client/app/app.module.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.8",
+    "angular-ui": "~0.4.0",
+    "protractor": "~1.5.0",
+    "mocha": "~2.0.1",
+    "chai": "~1.10.0",
+    "sinon": "~1.12.2",
+    "jquery": "~2.1.3",
+    "foundation": "~5.5.0",
+    "angular-route": "~1.3.8",
+    "angular-animate": "~1.3.8",
+    "angular-sanitize": "~1.3.8"
+  }
+}
