@@ -8,10 +8,7 @@ function dssaDeploy(server, options, next) {
         handler : function(request, reply) {
             notifier.notify({
                 title: 'DSSA deploy status',
-                message:    'Deploy no. ' +
-                            request.params.deployNumber +
-                            ' finished with status ' +
-                            request.params.status,
+                message:    'Deploy no. ' + request.params.deployNumber + ' finished with status ' + request.params.status,
                 icon: path.join(__dirname, 'coulson.jpg'), // absolute path (not balloons)
                 sound: true, // Only Notification Center or Windows Toasters
                 wait: true // wait with callback until user action is taken on notification
