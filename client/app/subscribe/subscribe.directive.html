@@ -1,7 +1,15 @@
-<form action="#">
-        <label for="endpoint">Endpoint</label>
-        <input id="endpoint" type="text" ng-model="endpoint"/>
-        <label for="notifications">Notifications</label>
-        <input id="notifications" type="text"/>
-        <div class="preview">{{ endpoint }}</div>
-</form>
+<div class="row">
+    <div class="columns large-9">
+        <form action="#">
+            <fieldset>
+                <legend>Subscribe to notifications</legend>
+                <label for="endpoint">Endpoint</label>
+                <input id="endpoint" type="text" ng-model="endpoint"/>
+                <label for="notifications">Notifications</label>
+                <input id="notifications" type="text"/>
+
+                <div class="preview">{{ endpoint }}</div>
+            </fieldset>
+        </form>
+    </div>
+</div>

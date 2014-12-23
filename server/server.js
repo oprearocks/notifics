@@ -1,18 +1,16 @@
 /* globals require */
 var Hapi = require('hapi'),
-    path = require('path'),
     server = new Hapi.Server(),
 
-    plugins = [];
-
-
-plugins.push({register: require('./routes/dssa-deploy.js')});
+    plugins = [
+        {register: require('./routes/dssa-deploy.js')},
+        {register: require('./routes/application.js')}
+    ];
 
 server.connection({
     host : 'localhost',
     port : 8080
 });
-
 
 
 server.register(plugins, function(err) {
