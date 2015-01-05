@@ -1,6 +1,6 @@
 /* globals require */
-var Hapi = require('hapi'),
-    server = new Hapi.Server(),
+var Hapi    = require('hapi'),
+    server  = new Hapi.Server(),
 
     plugins = [
         {register: require('./routes/dssa-deploy.js')},
@@ -8,18 +8,18 @@ var Hapi = require('hapi'),
     ];
 
 server.connection({
-    host : 'localhost',
-    port : 8080
+    host: 'localhost',
+    port: 8080
 });
 
 
-server.register(plugins, function(err) {
+server.register(plugins, function (err) {
     if (err) {
         console.log('Error registering plugins.');
         throw err;
     }
 
-    server.start(function(err) {
+    server.start(function (err) {
         if (err) {
             console.log('An error has occurred!');
             throw err;

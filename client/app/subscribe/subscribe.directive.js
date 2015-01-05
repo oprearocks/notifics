@@ -6,12 +6,10 @@
 
     function subscribeToNotifications() {
         var directive = {
-            restrict : 'E',
-            scope : {
-
-            },
-            templateUrl : 'app/subscribe/subscribe.directive.html',
-            link : link
+            restrict   : 'E',
+            scope      : {},
+            templateUrl: 'app/subscribe/subscribe.directive.html',
+            link       : link
 
         };
 
@@ -19,10 +17,11 @@
     }
 
     function link(scope, element, attrs) {
-        if (attrs.role.toLowerCase() === 'admin') {
+        if (attrs.role && attrs.role.toLowerCase() === 'admin') {
             console.log('is ADMIN');
-        } else if (attrs.role.toLowerCase() === 'user') {
+        } else if (attrs.role && attrs.role.toLowerCase() === 'user') {
             console.log('regular user');
         }
+
     }
 })();

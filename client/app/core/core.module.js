@@ -3,6 +3,9 @@
 
     angular.module('app.core', [
         // Angular modules
-        'ngRoute', 'ngAnimate', 'ngSanitize'
+        'ngRoute', 'ngAnimate', 'ngSanitize',
+
+        'LocalStorageModule'
     ]);
+
 })();

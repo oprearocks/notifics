@@ -1,15 +1,35 @@
-<div class="row">
-    <div class="columns large-9">
+<div class="row" ng-controller="Notifications as vm">
+    <div class="columns large-6">
         <form action="#">
             <fieldset>
                 <legend>Subscribe to notifications</legend>
-                <label for="endpoint">Endpoint</label>
-                <input id="endpoint" type="text" ng-model="endpoint"/>
-                <label for="notifications">Notifications</label>
-                <input id="notifications" type="text"/>
 
-                <div class="preview">{{ endpoint }}</div>
+                <label for="team">Team</label>
+                <select name="team" id="team" ng-model="vm.team">
+                    <option value="dssa">DSSA</option>
+                    <option value="ddro">Domains Registration</option>
+                    <option value="deng">Domains Engineering</option>
+                    <option value="dprod">Domains Products</option>
+                </select>
+                <label for="endpoint">Endpoint</label>
+                <input id="endpoint" type="text" ng-model="vm.endpoint" placeholder="/endpoint"/>
+
+                <label for="notifications">Notifications</label>
+                <input id="notifications" type="text" ng-model="vm.notifications" placeholder="merge, deploy"/>
+
+                <button type="button" ng-click="vm.subscribe()">Subscribe</button>
             </fieldset>
         </form>
     </div>
+
+    <div class="columns large-4 preview">
+        <pre>
+        {
+            "team"          : "{{ vm.team }}",
+            "endpoint"      : "{{ vm.endpoint }}",
+            "notifications" : {{ vm.notifications.split(', ') }}
+        }
+        </pre>
+    </div>
+
 </div>
