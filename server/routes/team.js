@@ -3,16 +3,18 @@ var notifier = require('node-notifier'),
 
     path     = require('path');
 
-function dssaDeploy(server, options, next) {
+function teamDeployRoute(server, options, next) {
+    console.log(__dirname);
     server.route({
         method : 'GET',
-        path   : '/dssa-deploy/{deployNumber}/{status}',
+        path   : '/team-deploy/{deployTicket}/{status}',
         handler: function (request, reply) {
             notifier.notify({
-                title  : 'DSSA deploy status',
-                message: 'Deploy no. ' + request.params.deployNumber + ' finished with status ' + request.params.status,
-                icon   : path.join(__dirname, 'coulson.jpg'), // absolute path (not balloons)
+                title  : 'TEAM deploy status',
+                message: 'Deploy ticket ' + request.params.deployTicket + ' was delivered with status: ' + request.params.status,
+                icon   : path.join(__dirname, '/resources/logo_300_.png'), // absolute path (not balloons)
                 sound  : true, // Only Notification Center or Windows Toasters
+                open   : 'https://google.com/' + request.params.deployTicket,
                 wait   : true // wait with callback until user action is taken on notification
             }, function (err, response) {
                 // response is response from notification
@@ -31,10 +33,10 @@ function dssaDeploy(server, options, next) {
     next();
 }
 
-dssaDeploy.attributes = {
-    name   : 'dssa-deploy-route', // Must be unique
+teamDeployRoute.attributes = {
+    name   : 'team-deploy-route', // Must be unique
     version: '1.0.0'
 };
 
 /* Public interface */
-exports.register = dssaDeploy;
+exports.register = teamDeployRoute;

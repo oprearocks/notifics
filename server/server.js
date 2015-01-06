@@ -3,7 +3,7 @@ var Hapi    = require('hapi'),
     server  = new Hapi.Server(),
 
     plugins = [
-        {register: require('./routes/dssa-deploy.js')},
+        {register: require('./routes/team-deploy.js')},
         {register: require('./routes/application.js')}
     ];
 

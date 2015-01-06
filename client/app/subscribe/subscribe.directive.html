@@ -5,12 +5,11 @@
                 <legend>Subscribe to notifications</legend>
 
                 <label for="team">Team</label>
-                <select name="team" id="team" ng-model="vm.team">
-                    <option value="dssa">DSSA</option>
-                    <option value="ddro">Domains Registration</option>
-                    <option value="deng">Domains Engineering</option>
-                    <option value="dprod">Domains Products</option>
+
+                <select name="team" id="team" ng-model="vm.selectedTeam">
+                    <option ng-repeat="team in vm.teams" value="{{ team }}">{{ team }}</option>
                 </select>
+
                 <label for="endpoint">Endpoint</label>
                 <input id="endpoint" type="text" ng-model="vm.endpoint" placeholder="/endpoint"/>
 
